@@ -46,7 +46,10 @@
         <p class="header-subtitle">Panel de gestión · WhatsApp Bot</p>
       </div>
       <div class="header-right">
-        <span id="bot-status" class="status-badge status-unknown">Comprobando…</span>
+        <span id="bot-status" class="status-badge status-unknown">
+          <svg class="status-dot" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4"></circle></svg>
+          <span id="bot-status-text">Comprobando…</span>
+        </span>
         <span id="today-messages" class="today-messages">Mensajes hoy: —</span>
         <button id="logout-btn" class="btn-ghost" type="button">Salir</button>
       </div>
@@ -54,22 +57,35 @@
 
     <section class="metrics-grid" aria-label="Métricas del mes">
       <article class="metric-card">
-        <span class="metric-icon">📈</span>
+        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="3 17 9 11 13 15 21 6"></polyline>
+          <polyline points="15 6 21 6 21 12"></polyline>
+        </svg>
         <span class="metric-label">Leads este mes</span>
         <span class="metric-value" id="metric-total-leads">0</span>
       </article>
       <article class="metric-card">
-        <span class="metric-icon">✅</span>
+        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <polyline points="8 12.5 11 15.5 16 9"></polyline>
+        </svg>
         <span class="metric-label">Citas confirmadas</span>
         <span class="metric-value" id="metric-confirmed">0</span>
       </article>
       <article class="metric-card">
-        <span class="metric-icon">⏳</span>
+        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <polyline points="12 7 12 12 15.5 14"></polyline>
+        </svg>
         <span class="metric-label">Citas pendientes</span>
         <span class="metric-value" id="metric-pending">0</span>
       </article>
       <article class="metric-card metric-card-accent">
-        <span class="metric-icon">🎯</span>
+        <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5"></circle>
+          <circle cx="12" cy="12" r="4.5"></circle>
+          <circle cx="12" cy="12" r="0.5"></circle>
+        </svg>
         <span class="metric-label">Tasa de conversión</span>
         <span class="metric-value" id="metric-conversion">0%</span>
       </article>

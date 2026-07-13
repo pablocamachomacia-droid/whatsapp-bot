@@ -20,6 +20,7 @@
   const dashboardView = document.getElementById('dashboard-view');
   const businessNameEl = document.getElementById('business-name');
   const botStatusEl = document.getElementById('bot-status');
+  const botStatusTextEl = document.getElementById('bot-status-text');
   const todayMessagesEl = document.getElementById('today-messages');
   const logoutBtn = document.getElementById('logout-btn');
 
@@ -170,7 +171,7 @@
   function renderData(data) {
     businessNameEl.textContent = data.business.name;
 
-    botStatusEl.textContent = data.business.isOpen ? 'Bot activo 🟢' : 'Fuera de horario 🟡';
+    botStatusTextEl.textContent = data.business.isOpen ? 'Bot activo' : 'Fuera de horario';
     botStatusEl.classList.remove('status-unknown');
     botStatusEl.classList.toggle('status-open', data.business.isOpen);
     botStatusEl.classList.toggle('status-closed', !data.business.isOpen);

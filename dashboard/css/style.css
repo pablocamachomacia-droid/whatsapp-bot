@@ -18,6 +18,9 @@
   --danger-soft: rgba(255, 84, 112, 0.14);
   --info: #6ea8ff;
   --info-soft: rgba(110, 168, 255, 0.14);
+  --status-amber: #f59e0b;
+  --status-amber-soft: rgba(245, 158, 11, 0.14);
+  --icon-muted: #888888;
   --radius: 14px;
   --radius-sm: 10px;
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
@@ -216,6 +219,18 @@ input {
   border: 1px solid var(--border);
   background: var(--bg-input);
   white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.status-dot circle {
+  fill: currentColor;
 }
 
 .status-badge.status-open {
@@ -225,9 +240,9 @@ input {
 }
 
 .status-badge.status-closed {
-  color: var(--warning);
-  background: var(--warning-soft);
-  border-color: rgba(255, 181, 69, 0.3);
+  color: var(--status-amber);
+  background: var(--status-amber-soft);
+  border-color: rgba(245, 158, 11, 0.3);
 }
 
 .today-messages {
@@ -284,7 +299,9 @@ input {
 }
 
 .metric-icon {
-  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: var(--icon-muted);
 }
 
 .metric-label {
