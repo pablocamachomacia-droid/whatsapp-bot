@@ -1,0 +1,53 @@
+{
+  "_readme": [
+    "Ejemplo completo de configuracion de un negocio para el bot de WhatsApp.",
+    "El JSON estandar no admite comentarios, asi que este archivo documenta cada campo",
+    "con claves descriptivas (las que empiezan por '_'). Esas claves son solo referencia",
+    "para el desarrollador: el bot NUNCA lee este archivo en tiempo de ejecucion.",
+    "",
+    "Como usarlo:",
+    "1) Copia el contenido del objeto 'business' de aqui abajo.",
+    "2) Pegalo en src/config/businesses.ts como una nueva entrada del mapa, usando el",
+    "   valor de 'phoneNumberId' (ver mas abajo) como clave.",
+    "3) O, mas facil: ejecuta 'npm run onboard' y responde las preguntas — genera esto",
+    "   mismo de forma interactiva y lo inserta el solo en businesses.ts."
+  ],
+
+  "phoneNumberId": "111111111111111",
+  "_phoneNumberId_comment": "ID del numero de WhatsApp Business en Meta (WhatsApp > Configuracion de la API > Phone Number ID). Es la CLAVE del mapa en businesses.ts, no un campo dentro de 'business'. NO es el numero de telefono en si (ese va en 'business.phone').",
+
+  "business": {
+    "id": "clinica-dental-ejemplo",
+    "name": "Clinica Dental Ejemplo",
+    "type": "dental",
+    "services": [
+      { "name": "Limpieza dental", "price": "45€", "duration": "30 min" },
+      { "name": "Revision de ortodoncia", "price": "60€", "duration": "20 min" },
+      { "name": "Blanqueamiento dental", "price": "150€", "duration": "45 min" },
+      { "name": "Implante dental", "price": "Desde 900€", "duration": "60 min" },
+      { "name": "Urgencias dentales", "duration": "30 min" }
+    ],
+    "schedule": [
+      { "day": "Lunes-Viernes", "hours": "09:00-20:00" },
+      { "day": "Sabado", "hours": "09:00-14:00" }
+    ],
+    "address": "Calle Mayor 45, Madrid",
+    "phone": "+34 910 000 000",
+    "website": "https://clinicadentalejemplo.com",
+    "customInstructions": "Los tratamientos de ortodoncia siempre requieren una primera visita presencial de valoracion antes de dar un precio cerrado.",
+    "notificationPhone": "34600111222"
+  },
+
+  "_fieldNotes": {
+    "id": "Identificador interno unico (slug en minusculas, sin espacios ni acentos). Se usa en las URLs del dashboard (/dashboard) y para agrupar los leads de este negocio. Si lo dejas en blanco, 'npm run onboard' lo genera solo a partir del nombre.",
+    "name": "Nombre visible del negocio. Aparece en el system prompt de Claude y en el dashboard.",
+    "type": "Uno de: \"dental\" | \"arquitectura\" | \"estetica\" | \"generic\". Solo se usa como etiqueta interna por ahora (no cambia el comportamiento de Claude).",
+    "services": "Lista de servicios que ofrece el negocio. 'price' y 'duration' son opcionales (string libre, ej. '45€', 'Desde 900€', '30 min'). Claude los usa para responder precios y duraciones directamente, sin inventar datos.",
+    "schedule": "Lista de tramos horarios. 'day' admite un dia suelto ('Sabado'), una lista ('Lunes,Miercoles') o un rango ('Lunes-Viernes'), en español o ingles. 'hours' admite turno partido separando por comas: '10:00-14:00,16:00-19:00'. Se usa para calcular si el negocio esta abierto ahora mismo (isBusinessHours).",
+    "address": "Direccion fisica del negocio. Se muestra al cliente cuando la pide.",
+    "phone": "Telefono de contacto publico del negocio (formato libre, ej. '+34 910 000 000'). Es el que Claude menciona al cliente si lo pide.",
+    "website": "Opcional. URL publica del negocio; se menciona al cliente si esta disponible.",
+    "customInstructions": "Opcional. Texto libre inyectado en el system prompt de Claude SOLO para este negocio (matices del sector, condiciones especiales, advertencias). Util para reglas que no aplican a todos los negocios por igual.",
+    "notificationPhone": "Numero de WhatsApp en formato API (solo digitos, sin '+', ej. '34600111222') donde el NEGOCIO recibe: nuevas citas/leads, alertas de mensajes urgentes y el resumen diario a las 20:00. Si se omite, se usa 'phone' limpiando los caracteres no numericos (menos fiable si 'phone' no es un numero de WhatsApp valido)."
+  }
+}

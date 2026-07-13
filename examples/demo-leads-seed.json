@@ -1,0 +1,66 @@
+[
+  {
+    "id": "5f87645f-a8d6-49e5-a35d-2bc4503e4eb8",
+    "businessId": "clinica-dental-demo-madrid",
+    "phone": "34611222001",
+    "name": "María González",
+    "service": "Limpieza dental",
+    "preferredDate": "viernes",
+    "preferredTime": "10:00",
+    "status": "confirmed",
+    "createdAt": "2026-07-10T09:15:00.000Z",
+    "firstContactAt": "2026-07-10T09:15:00.000Z",
+    "lastMessageAt": "2026-07-10T09:20:00.000Z"
+  },
+  {
+    "id": "253c545d-a6cf-42ca-b7c6-876704763d06",
+    "businessId": "clinica-dental-demo-madrid",
+    "phone": "34611222002",
+    "name": "Javier Ruiz",
+    "service": "Ortodoncia",
+    "preferredDate": "la semana que viene",
+    "status": "new",
+    "createdAt": "2026-07-13T08:05:00.000Z",
+    "firstContactAt": "2026-07-13T08:05:00.000Z",
+    "lastMessageAt": "2026-07-13T08:05:00.000Z"
+  },
+  {
+    "id": "11c46d93-0250-4b54-8eaf-c6474186a739",
+    "businessId": "clinica-dental-demo-madrid",
+    "phone": "34611222003",
+    "name": "Laura Martínez",
+    "service": "Blanqueamiento dental",
+    "preferredDate": "sábado",
+    "preferredTime": "11:00",
+    "status": "contacted",
+    "createdAt": "2026-07-12T17:40:00.000Z",
+    "firstContactAt": "2026-07-12T17:40:00.000Z",
+    "lastMessageAt": "2026-07-12T18:00:00.000Z"
+  },
+  {
+    "id": "bbf58c37-ff23-48a8-b37c-c84f206d680b",
+    "businessId": "clinica-dental-demo-madrid",
+    "phone": "34611222004",
+    "name": "Carlos Sánchez",
+    "service": "Empaste",
+    "preferredDate": "lunes",
+    "preferredTime": "17:00",
+    "status": "confirmed",
+    "createdAt": "2026-07-06T12:00:00.000Z",
+    "firstContactAt": "2026-07-06T12:00:00.000Z",
+    "lastMessageAt": "2026-07-06T12:10:00.000Z"
+  },
+  {
+    "id": "2f700004-861b-42d6-b539-2c4ce32ff043",
+    "businessId": "clinica-dental-demo-madrid",
+    "phone": "34611222005",
+    "name": "Ana López",
+    "service": "Limpieza dental",
+    "preferredDate": "jueves",
+    "status": "cancelled",
+    "intent": "cancellation",
+    "createdAt": "2026-07-09T15:20:00.000Z",
+    "firstContactAt": "2026-07-09T15:20:00.000Z",
+    "lastMessageAt": "2026-07-11T10:00:00.000Z"
+  }
+]
