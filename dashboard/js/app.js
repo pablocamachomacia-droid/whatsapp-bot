@@ -16,20 +16,16 @@
   const apiKeyInput = document.getElementById('api-key-input');
   const loginSubmitBtn = document.getElementById('login-submit');
   const loginError = document.getElementById('login-error');
-  const foxWelcomeEl = document.getElementById('fox-welcome');
 
   const dashboardView = document.getElementById('dashboard-view');
   const businessNameEl = document.getElementById('business-name');
   const botStatusEl = document.getElementById('bot-status');
   const botStatusTextEl = document.getElementById('bot-status-text');
-  const foxSleepingEl = document.getElementById('fox-sleeping');
-  const foxWorkingEl = document.getElementById('fox-working');
   const todayMessagesEl = document.getElementById('today-messages');
   const logoutBtn = document.getElementById('logout-btn');
 
   const metricTotalLeadsEl = document.getElementById('metric-total-leads');
   const metricConfirmedEl = document.getElementById('metric-confirmed');
-  const foxConfirmedEl = document.getElementById('fox-confirmed');
   const metricPendingEl = document.getElementById('metric-pending');
   const metricConversionEl = document.getElementById('metric-conversion');
 
@@ -45,18 +41,6 @@
   let currentFilter = 'all';
   let currentSearch = '';
   let sortState = { column: 'preferredDate', direction: 'desc' };
-
-  // --- Mascota (zorro) ---
-  // Los <img> apuntan al SVG placeholder por defecto. Si el PNG real ya existe
-  // en dashboard/img/, esta funcion lo precarga y sustituye el src al vuelo.
-  function upgradeFoxImage(imgEl, foxName) {
-    if (!imgEl) return;
-    const probe = new Image();
-    probe.onload = () => {
-      imgEl.src = `img/${foxName}.png`;
-    };
-    probe.src = `img/${foxName}.png`;
-  }
 
   // --- Sesion (localStorage) ---
   function loadSession() {
@@ -191,7 +175,6 @@
     botStatusEl.classList.remove('status-unknown');
     botStatusEl.classList.toggle('status-open', data.business.isOpen);
     botStatusEl.classList.toggle('status-closed', !data.business.isOpen);
-    foxSleepingEl.hidden = data.business.isOpen;
 
     todayMessagesEl.textContent = `Mensajes hoy: ${data.stats.todayMessages}`;
 
@@ -199,7 +182,6 @@
     metricConfirmedEl.textContent = data.stats.confirmed;
     metricPendingEl.textContent = data.stats.pending;
     metricConversionEl.textContent = `${data.stats.conversionRate}%`;
-    foxConfirmedEl.hidden = !(data.stats.confirmed > 0);
 
     currentLeads = data.leads || [];
     renderLeadsTable();
@@ -276,28 +258,7 @@
       const cell = document.createElement('td');
       cell.colSpan = 6;
       cell.className = 'empty-row';
-
-      if (currentLeads.length === 0) {
-        cell.classList.add('empty-row-fox');
-
-        const fox = document.createElement('img');
-        fox.className = 'empty-fox';
-        fox.src = 'img/fox-waiting.svg';
-        fox.alt = 'Zorro esperando el primer lead';
-        fox.width = 80;
-        fox.height = 80;
-        upgradeFoxImage(fox, 'fox-waiting');
-
-        const text = document.createElement('p');
-        text.className = 'empty-fox-text';
-        text.textContent = 'El zorro está esperando el primer lead...';
-
-        cell.appendChild(fox);
-        cell.appendChild(text);
-      } else {
-        cell.textContent = 'No hay leads que coincidan con este filtro.';
-      }
-
+      cell.textContent = 'No hay leads que coincidan con este filtro.';
       row.appendChild(cell);
       leadsTbody.appendChild(row);
       updateSortArrows();
@@ -364,11 +325,6 @@
   });
 
   // --- Arranque ---
-  upgradeFoxImage(foxWelcomeEl, 'fox-welcome');
-  upgradeFoxImage(foxWorkingEl, 'fox-working');
-  upgradeFoxImage(foxSleepingEl, 'fox-sleeping');
-  upgradeFoxImage(foxConfirmedEl, 'fox-celebrating');
-
   const storedSession = loadSession();
   if (storedSession) {
     session = storedSession;

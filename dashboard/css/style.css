@@ -73,92 +73,7 @@ input {
   background: radial-gradient(circle at 50% 0%, rgba(0, 212, 170, 0.08), transparent 60%), var(--bg);
 }
 
-.login-fox {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  display: block;
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  background: transparent;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  opacity: 0;
-  animation:
-    fox-entry 0.8s ease-out forwards,
-    fox-float 3s ease-in-out 0.8s infinite,
-    fox-pulse 2.4s ease-in-out infinite;
-  transform: translateX(-50%);
-}
-
-.login-fox:hover {
-  animation: fox-hover-jump 0.5s ease-in-out;
-  cursor: pointer;
-}
-
-@keyframes fox-entry {
-  from {
-    opacity: 0;
-    translate: 0 20px;
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
-
-@keyframes fox-float {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-  50% {
-    translate: 0 -8px;
-  }
-}
-
-@keyframes fox-pulse {
-  0%,
-  100% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.04;
-  }
-}
-
-@keyframes fox-hover-jump {
-  0% {
-    translate: 0 0;
-    rotate: 0deg;
-  }
-  30% {
-    translate: 0 -14px;
-    rotate: -8deg;
-  }
-  60% {
-    translate: 0 2px;
-    rotate: 6deg;
-  }
-  100% {
-    translate: 0 0;
-    rotate: 0deg;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .login-fox {
-    animation: none;
-    opacity: 1;
-  }
-
-  .login-fox:hover {
-    animation: none;
-  }
-}
-
 .login-card {
-  position: relative;
   width: 100%;
   max-width: 380px;
   background: var(--bg-card);
@@ -166,7 +81,6 @@ input {
   border-radius: var(--radius);
   box-shadow: var(--shadow-elevated);
   padding: 32px 28px;
-  padding-top: 80px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -298,19 +212,6 @@ input {
   box-shadow: var(--shadow-card);
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.header-fox {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
 .header-left h1 {
   font-size: 20px;
 }
@@ -326,13 +227,6 @@ input {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-}
-
-.status-fox {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  flex-shrink: 0;
 }
 
 .status-badge {
@@ -435,15 +329,6 @@ input {
   color: var(--text-muted);
   font-size: 12.5px;
   font-weight: 500;
-}
-
-.confirmed-fox {
-  display: block;
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  align-self: center;
-  margin-top: 4px;
 }
 
 .metric-value {
@@ -581,25 +466,6 @@ tbody tr:hover {
   color: var(--text-muted);
   padding: 28px 14px !important;
   white-space: normal !important;
-}
-
-.empty-row.empty-row-fox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.empty-fox {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-}
-
-.empty-fox-text {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 13px;
 }
 
 .lead-status-select {
