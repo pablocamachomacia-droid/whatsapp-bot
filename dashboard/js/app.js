@@ -28,6 +28,7 @@
   const metricConfirmedEl = document.getElementById('metric-confirmed');
   const metricPendingEl = document.getElementById('metric-pending');
   const metricConversionEl = document.getElementById('metric-conversion');
+  const conversionBarFillEl = document.getElementById('conversion-bar-fill');
 
   const searchInput = document.getElementById('search-input');
   const statusFiltersEl = document.getElementById('status-filters');
@@ -182,6 +183,7 @@
     metricConfirmedEl.textContent = data.stats.confirmed;
     metricPendingEl.textContent = data.stats.pending;
     metricConversionEl.textContent = `${data.stats.conversionRate}%`;
+    conversionBarFillEl.style.width = `${Math.min(100, Math.max(0, data.stats.conversionRate))}%`;
 
     currentLeads = data.leads || [];
     renderLeadsTable();

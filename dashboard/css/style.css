@@ -337,6 +337,23 @@ input {
   letter-spacing: -0.02em;
 }
 
+.conversion-bar {
+  width: 100%;
+  height: 4px;
+  background: #2a2a2a;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.conversion-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #00d4aa;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
 /* ---------- Leads section ---------- */
 .leads-section {
   background: var(--bg-card);
@@ -416,8 +433,33 @@ input {
 table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   min-width: 720px;
   font-size: 13.5px;
+}
+
+.col-name {
+  width: 20%;
+}
+
+.col-phone {
+  width: 15%;
+}
+
+.col-service {
+  width: 25%;
+}
+
+.col-date {
+  width: 15%;
+}
+
+.col-time {
+  width: 10%;
+}
+
+.col-status {
+  width: 15%;
 }
 
 thead th {
@@ -430,9 +472,9 @@ thead th {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   cursor: pointer;
-  white-space: nowrap;
   user-select: none;
   border-bottom: 1px solid var(--border);
+  overflow-wrap: break-word;
 }
 
 thead th:hover {
@@ -450,7 +492,7 @@ tbody td {
   padding: 12px 14px;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
-  white-space: nowrap;
+  overflow-wrap: break-word;
 }
 
 tbody tr:last-child td {
@@ -478,6 +520,11 @@ tbody tr:hover {
   padding: 6px 10px;
   cursor: pointer;
   outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
 
 .lead-status-select.status-new {

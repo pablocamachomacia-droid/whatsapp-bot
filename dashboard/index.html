@@ -99,6 +99,9 @@
         </svg>
         <span class="metric-label">Tasa de conversión</span>
         <span class="metric-value" id="metric-conversion">0%</span>
+        <div class="conversion-bar">
+          <div class="conversion-bar-fill" id="conversion-bar-fill"></div>
+        </div>
       </article>
     </section>
 
@@ -123,12 +126,12 @@
         <table id="leads-table">
           <thead>
             <tr>
-              <th data-sort="name">Nombre <span class="sort-arrow"></span></th>
-              <th data-sort="phone">Teléfono <span class="sort-arrow"></span></th>
-              <th data-sort="service">Servicio <span class="sort-arrow"></span></th>
-              <th data-sort="preferredDate">Fecha preferida <span class="sort-arrow"></span></th>
-              <th data-sort="preferredTime">Hora <span class="sort-arrow"></span></th>
-              <th data-sort="status">Estado <span class="sort-arrow"></span></th>
+              <th data-sort="name" class="col-name">Nombre <span class="sort-arrow"></span></th>
+              <th data-sort="phone" class="col-phone">Teléfono <span class="sort-arrow"></span></th>
+              <th data-sort="service" class="col-service">Servicio <span class="sort-arrow"></span></th>
+              <th data-sort="preferredDate" class="col-date">Fecha preferida <span class="sort-arrow"></span></th>
+              <th data-sort="preferredTime" class="col-time">Hora <span class="sort-arrow"></span></th>
+              <th data-sort="status" class="col-status">Estado <span class="sort-arrow"></span></th>
             </tr>
           </thead>
           <tbody id="leads-tbody">
