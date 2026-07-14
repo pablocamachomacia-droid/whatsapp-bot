@@ -106,6 +106,27 @@ input {
   box-shadow: 0 0 8px var(--accent);
 }
 
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.login-logo-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.login-logo-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
 .login-card h1 {
   font-size: 22px;
   margin-bottom: 6px;
