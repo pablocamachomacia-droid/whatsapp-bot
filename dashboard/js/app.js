@@ -21,11 +21,13 @@
   const businessNameEl = document.getElementById('business-name');
   const botStatusEl = document.getElementById('bot-status');
   const botStatusTextEl = document.getElementById('bot-status-text');
+  const foxSleepingEl = document.getElementById('fox-sleeping');
   const todayMessagesEl = document.getElementById('today-messages');
   const logoutBtn = document.getElementById('logout-btn');
 
   const metricTotalLeadsEl = document.getElementById('metric-total-leads');
   const metricConfirmedEl = document.getElementById('metric-confirmed');
+  const foxConfirmedEl = document.getElementById('fox-confirmed');
   const metricPendingEl = document.getElementById('metric-pending');
   const metricConversionEl = document.getElementById('metric-conversion');
 
@@ -175,6 +177,7 @@
     botStatusEl.classList.remove('status-unknown');
     botStatusEl.classList.toggle('status-open', data.business.isOpen);
     botStatusEl.classList.toggle('status-closed', !data.business.isOpen);
+    foxSleepingEl.hidden = data.business.isOpen;
 
     todayMessagesEl.textContent = `Mensajes hoy: ${data.stats.todayMessages}`;
 
@@ -182,6 +185,7 @@
     metricConfirmedEl.textContent = data.stats.confirmed;
     metricPendingEl.textContent = data.stats.pending;
     metricConversionEl.textContent = `${data.stats.conversionRate}%`;
+    foxConfirmedEl.hidden = !(data.stats.confirmed > 0);
 
     currentLeads = data.leads || [];
     renderLeadsTable();
@@ -258,7 +262,31 @@
       const cell = document.createElement('td');
       cell.colSpan = 6;
       cell.className = 'empty-row';
-      cell.textContent = 'No hay leads que coincidan con este filtro.';
+
+      if (currentLeads.length === 0) {
+        cell.classList.add('empty-row-fox');
+
+        const fox = document.createElement('img');
+        fox.className = 'empty-fox';
+        fox.src = 'img/fox-waiting.png';
+        fox.alt = 'Zorro esperando el primer lead';
+        fox.width = 80;
+        fox.height = 80;
+        fox.onerror = () => {
+          fox.onerror = null;
+          fox.src = 'img/fox-waiting.svg';
+        };
+
+        const text = document.createElement('p');
+        text.className = 'empty-fox-text';
+        text.textContent = 'El zorro está esperando el primer lead...';
+
+        cell.appendChild(fox);
+        cell.appendChild(text);
+      } else {
+        cell.textContent = 'No hay leads que coincidan con este filtro.';
+      }
+
       row.appendChild(cell);
       leadsTbody.appendChild(row);
       updateSortArrows();

@@ -15,6 +15,14 @@
 <body>
   <!-- Vista de login -->
   <main id="login-view" class="login-screen">
+    <img
+      class="login-fox"
+      src="img/fox-welcome.png"
+      alt="Zorro mascota de RecepIA dando la bienvenida"
+      width="120"
+      height="120"
+      onerror="this.onerror=null;this.src='img/fox-welcome.svg'"
+    />
     <form id="login-form" class="login-card" autocomplete="off">
       <div class="login-brand">
         <span class="login-brand-dot"></span>
@@ -53,14 +61,34 @@
   <div id="dashboard-view" class="dashboard" hidden>
     <header class="dashboard-header">
       <div class="header-left">
-        <h1 id="business-name">—</h1>
-        <p class="header-subtitle">Panel de gestión · WhatsApp Bot</p>
+        <img
+          class="header-fox"
+          src="img/fox-working.png"
+          alt="Zorro mascota de RecepIA"
+          width="48"
+          height="48"
+          onerror="this.onerror=null;this.src='img/fox-working.svg'"
+        />
+        <div>
+          <h1 id="business-name">—</h1>
+          <p class="header-subtitle">Panel de gestión · WhatsApp Bot</p>
+        </div>
       </div>
       <div class="header-right">
         <span id="bot-status" class="status-badge status-unknown">
           <svg class="status-dot" viewBox="0 0 8 8" aria-hidden="true"><circle cx="4" cy="4" r="4"></circle></svg>
           <span id="bot-status-text">Comprobando…</span>
         </span>
+        <img
+          id="fox-sleeping"
+          class="status-fox"
+          src="img/fox-sleeping.png"
+          alt="Zorro dormido: bot fuera de horario"
+          width="40"
+          height="40"
+          hidden
+          onerror="this.onerror=null;this.src='img/fox-sleeping.svg'"
+        />
         <span id="today-messages" class="today-messages">Mensajes hoy: —</span>
         <button id="logout-btn" class="btn-ghost" type="button">Salir</button>
       </div>
@@ -82,6 +110,16 @@
         </svg>
         <span class="metric-label">Citas confirmadas</span>
         <span class="metric-value" id="metric-confirmed">0</span>
+        <img
+          id="fox-confirmed"
+          class="confirmed-fox"
+          src="img/fox-celebrating.png"
+          alt="Zorro celebrando: hay citas confirmadas"
+          width="64"
+          height="64"
+          hidden
+          onerror="this.onerror=null;this.src='img/fox-celebrating.svg'"
+        />
       </article>
       <article class="metric-card">
         <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
