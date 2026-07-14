@@ -58,7 +58,7 @@ Si prefieres editar `businesses.ts` a mano, usa `examples/business-config-exampl
 
 ## Demo con datos de ejemplo
 
-Ya hay un negocio de demo configurado (**Clínica Dental Demo Madrid**, `phoneNumberId` `333333333333333`) con servicios y horario reales. Para que el dashboard se vea lleno desde el primer momento:
+Ya hay un negocio de demo configurado (**Camacho Maciá Arquitectos**, `phoneNumberId` `333333333333333`) con servicios y horario reales. Para que el dashboard se vea lleno desde el primer momento:
 
 ```bash
 npm run seed:demo

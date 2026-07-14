@@ -43,24 +43,25 @@ const businesses: Record<string, Business> = {
   },
   // Negocio de demo: usado para enseñar el bot y el dashboard llenos de datos realistas
   // a clientes potenciales. Los leads de ejemplo estan pre-cargados en data/leads.json.
+  // Datos reales de Camacho Macia Arquitectos (camachomaciaarquitectos.com), cliente de Madrid.
   '333333333333333': {
-    id: 'clinica-dental-demo-madrid',
-    name: 'Clínica Dental Demo Madrid',
-    type: 'dental',
+    id: 'camacho-macia-arquitectos',
+    name: 'Camacho Maciá Arquitectos',
+    type: 'arquitectura',
     services: [
-      { name: 'Limpieza dental', price: '80€', duration: '30 min' },
-      { name: 'Ortodoncia', price: 'Desde 1.500€' },
-      { name: 'Blanqueamiento dental', price: '250€', duration: '45 min' },
-      { name: 'Empaste', price: '90€', duration: '30 min' },
+      { name: 'Consulta inicial de proyecto', price: 'Gratuita', duration: '30 min' },
+      { name: 'Vivienda unifamiliar de autor', price: 'Presupuesto a medida' },
+      { name: 'Vivienda colectiva y residencial', price: 'Presupuesto a medida' },
+      { name: 'Arquitectura singular (equipamientos culturales)', price: 'Presupuesto a medida' },
+      { name: 'Direccion de obra', price: 'Presupuesto a medida' },
     ],
-    schedule: [
-      { day: 'Lunes-Viernes', hours: '09:00-14:00,16:00-20:00' },
-      { day: 'Sabado', hours: '10:00-14:00' },
-    ],
-    address: 'Calle Alcalá 200, Madrid',
-    phone: '+34 912 345 678',
-    website: 'https://clinicadentaldemo.example.com',
-    notificationPhone: '34600999888',
+    schedule: [{ day: 'Lunes-Viernes', hours: '09:30-19:30' }],
+    address: 'Paseo de los Ciruelos nº1, 28660 Boadilla del Monte, Madrid',
+    phone: '+34 910 063 053',
+    website: 'https://camachomaciaarquitectos.com',
+    customInstructions:
+      'Estudio fundado en 1998, con mas de 25 años de trayectoria combinando practica profesional, investigacion y docencia universitaria. Especializado en arquitectura singularizada (auditorios, teatros, museos), vivienda colectiva y concursos nacionales e internacionales. No des presupuestos cerrados por WhatsApp: cada proyecto requiere una consulta inicial para valorar alcance antes de dar cualquier cifra.',
+    notificationPhone: '34600555666',
   },
 };
 
