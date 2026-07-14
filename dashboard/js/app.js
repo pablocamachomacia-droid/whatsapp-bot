@@ -16,12 +16,14 @@
   const apiKeyInput = document.getElementById('api-key-input');
   const loginSubmitBtn = document.getElementById('login-submit');
   const loginError = document.getElementById('login-error');
+  const foxWelcomeEl = document.getElementById('fox-welcome');
 
   const dashboardView = document.getElementById('dashboard-view');
   const businessNameEl = document.getElementById('business-name');
   const botStatusEl = document.getElementById('bot-status');
   const botStatusTextEl = document.getElementById('bot-status-text');
   const foxSleepingEl = document.getElementById('fox-sleeping');
+  const foxWorkingEl = document.getElementById('fox-working');
   const todayMessagesEl = document.getElementById('today-messages');
   const logoutBtn = document.getElementById('logout-btn');
 
@@ -43,6 +45,18 @@
   let currentFilter = 'all';
   let currentSearch = '';
   let sortState = { column: 'preferredDate', direction: 'desc' };
+
+  // --- Mascota (zorro) ---
+  // Los <img> apuntan al SVG placeholder por defecto. Si el PNG real ya existe
+  // en dashboard/img/, esta funcion lo precarga y sustituye el src al vuelo.
+  function upgradeFoxImage(imgEl, foxName) {
+    if (!imgEl) return;
+    const probe = new Image();
+    probe.onload = () => {
+      imgEl.src = `img/${foxName}.png`;
+    };
+    probe.src = `img/${foxName}.png`;
+  }
 
   // --- Sesion (localStorage) ---
   function loadSession() {
@@ -268,14 +282,11 @@
 
         const fox = document.createElement('img');
         fox.className = 'empty-fox';
-        fox.src = 'img/fox-waiting.png';
+        fox.src = 'img/fox-waiting.svg';
         fox.alt = 'Zorro esperando el primer lead';
         fox.width = 80;
         fox.height = 80;
-        fox.onerror = () => {
-          fox.onerror = null;
-          fox.src = 'img/fox-waiting.svg';
-        };
+        upgradeFoxImage(fox, 'fox-waiting');
 
         const text = document.createElement('p');
         text.className = 'empty-fox-text';
@@ -353,6 +364,11 @@
   });
 
   // --- Arranque ---
+  upgradeFoxImage(foxWelcomeEl, 'fox-welcome');
+  upgradeFoxImage(foxWorkingEl, 'fox-working');
+  upgradeFoxImage(foxSleepingEl, 'fox-sleeping');
+  upgradeFoxImage(foxConfirmedEl, 'fox-celebrating');
+
   const storedSession = loadSession();
   if (storedSession) {
     session = storedSession;

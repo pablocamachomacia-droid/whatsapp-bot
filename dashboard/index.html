@@ -16,12 +16,12 @@
   <!-- Vista de login -->
   <main id="login-view" class="login-screen">
     <img
+      id="fox-welcome"
       class="login-fox"
-      src="img/fox-welcome.png"
+      src="img/fox-welcome.svg"
       alt="Zorro mascota de RecepIA dando la bienvenida"
       width="120"
       height="120"
-      onerror="this.onerror=null;this.src='img/fox-welcome.svg'"
     />
     <form id="login-form" class="login-card" autocomplete="off">
       <div class="login-brand">
@@ -44,7 +44,7 @@
 
       <label class="field">
         <span>ID del negocio</span>
-        <input type="text" id="business-id-input" placeholder="clinica-dental-ejemplo" required />
+        <input type="text" id="business-id-input" placeholder="id-de-tu-negocio" required />
       </label>
 
       <label class="field">
@@ -62,12 +62,12 @@
     <header class="dashboard-header">
       <div class="header-left">
         <img
+          id="fox-working"
           class="header-fox"
-          src="img/fox-working.png"
+          src="img/fox-working.svg"
           alt="Zorro mascota de RecepIA"
           width="48"
           height="48"
-          onerror="this.onerror=null;this.src='img/fox-working.svg'"
         />
         <div>
           <h1 id="business-name">—</h1>
@@ -82,12 +82,11 @@
         <img
           id="fox-sleeping"
           class="status-fox"
-          src="img/fox-sleeping.png"
+          src="img/fox-sleeping.svg"
           alt="Zorro dormido: bot fuera de horario"
           width="40"
           height="40"
           hidden
-          onerror="this.onerror=null;this.src='img/fox-sleeping.svg'"
         />
         <span id="today-messages" class="today-messages">Mensajes hoy: —</span>
         <button id="logout-btn" class="btn-ghost" type="button">Salir</button>
@@ -113,12 +112,11 @@
         <img
           id="fox-confirmed"
           class="confirmed-fox"
-          src="img/fox-celebrating.png"
+          src="img/fox-celebrating.svg"
           alt="Zorro celebrando: hay citas confirmadas"
           width="64"
           height="64"
           hidden
-          onerror="this.onerror=null;this.src='img/fox-celebrating.svg'"
         />
       </article>
       <article class="metric-card">
