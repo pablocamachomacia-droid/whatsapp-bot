@@ -46,7 +46,7 @@ const businesses: Record<string, Business> = {
   // Datos reales de Camacho Macia Arquitectos (camachomaciaarquitectos.com), cliente de Madrid.
   '333333333333333': {
     id: 'camacho-macia-arquitectos',
-    name: 'Camacho Maciá Arquitectos',
+    name: 'Estudio Arquitectura Madrid',
     type: 'arquitectura',
     services: [
       { name: 'Consulta inicial de proyecto', price: 'Gratuita', duration: '30 min' },
