@@ -102,3 +102,7 @@ El healthcheck de Railway usa `GET /health` (sin autenticación), que expone `st
 | POST | `/leads/:id/status` | `x-api-key` | Cambia el estado de un lead |
 | GET | `/api/dashboard/:businessId` | `x-api-key` | Datos agregados para el panel web |
 | GET | `/dashboard` | Login propio (localStorage) | Panel web de gestión |
+
+## Licencia
+
+MIT — ver [LICENSE](LICENSE).
